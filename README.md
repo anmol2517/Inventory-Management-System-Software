@@ -32,7 +32,7 @@ For a Product, we have different attributes like:
 In this Inventory Management System Project, the Product ID is dynamically Generated which have a String and Number format. After Generating the Product ID then Inserted Other product details with ID in the Database.
 
 ## Project Creation Steps
-1. Create a Spring Stater Project using Spring Tool Suite IDE ( reference )
+1. Create a Spring Stater Project using Spring Tool Suite IDE ( reference ).
 2. After successfully creation of Project, then create a Package for different layers in this web Application namely packages for Controller, POJO, Repository, and other packages if you want.
 3. In the Controller Package create one ProductController class after that create one Project POJO class in the POJO package, After Creating one Product Repository interface in the Repository package. After that create one.
 4. HTML file in the Templates which is placed in the project resource folder.
@@ -41,9 +41,9 @@ In this Inventory Management System Project, the Product ID is dynamically Gener
 7. After successfully completion of Front-End and Back-End then Integrate both of them by using the Thymeleaf Framework.
 8. After that Run this Application as Spring Boot App.
 
->> Required Project Dependencies : These Project Dependencies are available in Spring Stater Project While creating the Project. After the Creation of this Project, You can see These Dependencies in the build.gradle file in the Project.
+>> Required Project Dependencies: These Project Dependencies are available in Spring Stater Project While creating the Project. After the Creation of this Project, You can see These Dependencies in the build.gradle file in the Project.
 
-- Project Folder Structure
+## Project Folder Structure
 
 ![image](https://github.com/user-attachments/assets/095d65cd-d020-4d78-8622-3fcbf6b0edb4)
 
@@ -53,7 +53,7 @@ Now we will see the development Process of Inventory Management System using Spr
 ## Database Connection
 In Inventory Management System Application, We perform different Operations on data. That's why we need a data storage for storing the data. For this, I Selected MongoDB Database for data Storage. In Database Connection, We need three attribute values Host name, Port number of MongoDB, And the other one is Database Name. The Database Connection Attributes are kept in the application properties file. We have already provided the folder structure. In that application properties file is available.
 
->> Here ims is the Database name, 27017 is the port number of MongoDB, And we have used Localhost for running the system on my local system.
+>> Here IMS is the Database name, 27017 is the port number of MongoDB, And we have used Localhost for running the system on my local system.
 
 ## Model Layer
 For this, we have created one POJO class in pojo package which is Product.class, this POJO class contains all the attributes of the Product and It has Setters and Getters and also two different constructors Parameterized and non-parameterized constructors. I used one dependency, Lombok which is available in Spring Boot. This Annotation is used for Parameterized and non-parameterized constructors by using *@Data, @AllArgsConstructor, @NoArgsConstructor, @Document.*
@@ -63,6 +63,7 @@ For this, we have created one POJO class in pojo package which is Product.class,
 
 - View Layer
 >> One HTML page in the Templates folder in the Project Folder Structure. And we have used Thymeleaf for Providing Dynamic Content of The HTML page in the Inventory Management System Project.
+
 >> Thymeleaf URL in HTML element. *used th: action, th:object, th:if*, and others for performing different operations on the HTML page. The Back-End logic is also handled by Thymeleaf, the result is visible on the HTML page.
 
 - Repository
@@ -75,11 +76,11 @@ For this, we have created one POJO class in pojo package which is Product.class,
 
 Code performs different operations like displaying the HTML index page, adding product details as well as displaying the analysis report of the Product.
 
-*@GetMapping("/productAnalysis")*
-*@GetMapping("/")*
-*@PostMapping("/newProduct")*
-*@PostMapping("/searchProduct")*
-*@PostMapping("/deleteProduct")*
+- *@GetMapping("/productAnalysis")*
+- *@GetMapping("/")*
+- *@PostMapping("/newProduct")*
+- *@PostMapping("/searchProduct")*
+- *@PostMapping("/deleteProduct")*
 
 - Display HTML Page
 >> *index.html* page I used Thymeleaf for integrating back-end logic with front-end view. By using *GET API* request.
@@ -91,6 +92,7 @@ Code performs different operations like displaying the HTML index page, adding p
 
 - Search Product Details
 >> A product detail by using product ID. If Product details exist, It displays the product details otherwise The Thymeleaf shows one Alert message if no data exists.
+
 >> If want to search for any product details, we need the product ID then only we search product details. For this we have created one POST API, that is searchProduct. When we hit this API, it will open one form and ask for product ID then Click on the Search Button. If the product ID does not exist, it will show one alert message to you.
 
 - Delete Product
