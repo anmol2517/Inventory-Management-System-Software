@@ -29,31 +29,33 @@ For a Product, we have different attributes like:
 9. User Email Address
 10. User Phone Number
 
-In this Inventory Management System Project, the Product ID is dynamically Generated which have String and Number format. After Generating Product ID then Inserted Other product detail with ID in the Database.
+In this Inventory Management System Project, the Product ID is dynamically Generated which have a String and Number format. After Generating the Product ID then Inserted Other product details with ID in the Database.
 
 ## Project Creation Steps
 1. Create a Spring Stater Project using Spring Tool Suite IDE ( reference )
-2. After successfully creation of Project, then create Package for different layers in this web Application namely packages for Controller, POJO, Repository and other packages if you want.
-3. In Controller Package create one ProductController class after that create one Project POJO class in POJO package, After Create one Product Repository interface in Repository package. After that create one 4. 4. HTML file in the Templates which is placed in project resource folder.
-5. Now Implement Controller layer code after that develop pojo class code, after that develop repository class code.
+2. After successfully creation of Project, then create a Package for different layers in this web Application namely packages for Controller, POJO, Repository, and other packages if you want.
+3. In the Controller Package create one ProductController class after that create one Project POJO class in the POJO package, After Creating one Product Repository interface in the Repository package. After that create one 4. 4. HTML file in the Templates which is placed in the project resource folder.
+5. Now Implement Controller layer code after that develop pojo class code, and after that develop repository class code.
 6. After completion of Back-end functionalities then develop the front-end page for visibility.
-7. After successfully completion of Front-End and Back-End then Integrate both of them by using Thymeleaf Framework.
+7. After successfully completion of Front-End and Back-End then Integrate both of them by using the Thymeleaf Framework.
 8. After that Run this Application as Spring Boot App.
 
->> Required Project Dependencies : These Project Dependencies are available in Spring Stater Project While creating the Project. After Creation of this Project You can see These Dependencies in build.gradle file in the Project.
+>> Required Project Dependencies : These Project Dependencies are available in Spring Stater Project While creating the Project. After the Creation of this Project, You can see These Dependencies in the build.gradle file in the Project.
+
+- Project Folder Structure
 
 ![image](https://github.com/user-attachments/assets/095d65cd-d020-4d78-8622-3fcbf6b0edb4)
 
 ## Code Development Process
-Now we will see the development Process of Inventory Management System using Spring Boot, Spring MVC. In development process first we create one POJO class for Products. In this POJO class we keep Attributes of Product like Product ID, Like *Product Category, Product Name, Product Rating, Quality, Maximum number of Products, Minimum number of Products, Username (Product Added by), User Email Address, User Phone Number.* This POJO class also have Setters and Getters methods for data handling with Parameterized and non-Parameterized constructors in Product POJO class.
+Now we will see the development Process of Inventory Management System using Spring Boot, and Spring MVC. In the development process first, we create one POJO class for Products. In this POJO class, we keep Attributes of Product like Product ID, Like *Product Category, Product Name, Product Rating, Quality, Maximum number of Products, Minimum number of Products, Username (Product Added by), User Email Address, User Phone Number.* This POJO class also has Setters and Getters methods for data handling with Parameterized and non-parameterized constructors in the Product POJO class.
 
 ## Database Connection
-In Inventory Management System Application, We perform different Operation on data. That's why we need a data storage for storing the data. For this I Selected MongoDB Database for data Storage. In Database Connection We need three attribute values those Host name, Port number of MongoDB, And the other one is Database Name. The Database Connection Attributes keep in application properties file. We have already provided the folder structure. In that application properties file is available.
+In Inventory Management System Application, We perform different Operations on data. That's why we need a data storage for storing the data. For this, I Selected MongoDB Database for data Storage. In Database Connection, We need three attribute values Host name, Port number of MongoDB, And the other one is Database Name. The Database Connection Attributes are kept in the application properties file. We have already provided the folder structure. In that application properties file is available.
 
 >> Here ims is the Database name, 27017 is the port number of MongoDB, And we have used Localhost for running the system on my local system.
 
 ## Model Layer
-For this, we have created one POJO class in pojo package that is Product.class, this POJO class contains all the attributes of the Product and It have Setters and Getters and also two different constructors like Parameterized and non-Parameterized constructors. And I used one dependency that is lombok which is available in Spring Boot. This Annotation is used for Parameterized and non-Parameterized constructors by using *@Data, @AllArgsConstructor, @NoArgsConstructor, @Document.*
+For this, we have created one POJO class in pojo package which is Product.class, this POJO class contains all the attributes of the Product and It has Setters and Getters and also two different constructors Parameterized and non-parameterized constructors. I used one dependency, Lombok which is available in Spring Boot. This Annotation is used for Parameterized and non-parameterized constructors by using *@Data, @AllArgsConstructor, @NoArgsConstructor, @Document.*
 
 - Product Class
 - View Layer
@@ -64,4 +66,4 @@ For this, we have created one POJO class in pojo package that is Product.class, 
 - Delete Product
 - Product Report
 
-The Inventory Management System basically used in Business tracking and their counting, and it provides the in-detail report about the Available Inventory. Here we have created a basic The Inventory Management *System using Spring Boot with Spring MVC Pattern*. Your Basic knowledge about annotations, working process of *Spring MVC pattern* and others for Better Understanding this Article.
+The Inventory Management System is used in Business tracking and counting, and it provides an in-detail report about the Available Inventory. Here we have created a basic Inventory Management *System using Spring Boot with Spring MVC Pattern*. Your Basic knowledge about annotations, the working process of *Spring MVC pattern*, and others for a Better Understanding of this Article.
