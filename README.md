@@ -58,12 +58,44 @@ In Inventory Management System Application, We perform different Operations on d
 For this, we have created one POJO class in pojo package which is Product.class, this POJO class contains all the attributes of the Product and It has Setters and Getters and also two different constructors Parameterized and non-parameterized constructors. I used one dependency, Lombok which is available in Spring Boot. This Annotation is used for Parameterized and non-parameterized constructors by using *@Data, @AllArgsConstructor, @NoArgsConstructor, @Document.*
 
 - Product Class
+>> *@Data Annotation* is used for managing Setters and Getters methods in the Product POJO class, The *@Document* is used for creating Collection name in the Database, *@AllArgsConstructor* is used for managing parameterized constructor and *@NoArgsConstructor* is used for managing the default constructor.
+
 - View Layer
+>> One HTML page in the Templates folder in the Project Folder Structure. And we have used Thymeleaf for Providing Dynamic Content of The HTML page in the Inventory Management System Project.
+>> Thymeleaf URL in HTML element. *used th: action, th:object, th:if*, and others for performing different operations on the HTML page. The Back-End logic is also handled by Thymeleaf, the result is visible on the HTML page.
+
 - Repository
+>> Already mentioned in the above *creation repository package*. In this Web Application, we have created one Mongo Repository by *@Repository Annotation* for Handling crud operations in this application, this is interact with Database. **This Interface extends to MongoRepository.**
+
+>> Provide *Product.class* ( POJO Class ) and *product ID* data type as Arguments to the *MongoRepository.* In Product pojo the ID type is String that's why we have passed String as an argument. This *ProducRepo* interface is used for performing CRUD operations on the data.
+
 - Controller Layer
+>>  The Controller class is created by using @Controller Annotation. This class handles the incoming API requests, based on the request type it can provide like post, get, delete like that. It can trigger the business logic and provide the output on the web page by using the Thymeleaf Framework.
+
+Code performs different operations like displaying the HTML index page, adding product details as well as displaying the analysis report of the Product.
+
+*@GetMapping("/productAnalysis")*
+*@GetMapping("/")*
+*@PostMapping("/newProduct")*
+*@PostMapping("/searchProduct")*
+*@PostMapping("/deleteProduct")*
+
 - Display HTML Page
+>> *index.html* page I used Thymeleaf for integrating back-end logic with front-end view. By using *GET API* request.
+
+- Insert New Product Details
+>> New product data with the help of the *ProductRepo* interface. This Repository provides one method which is the same method. This method is used to save data in the database.
+
+>> Created one *POST* mapping for saving product data, or this API one HTML Form is opened and it will ask some detail about the product once submitted that data. By using the Random method, we have generated one Unique number for that number as PD as a prefix, and after that con-cat both of them then we get the Unique Product ID.
+
 - Search Product Details
+>> A product detail by using product ID. If Product details exist, It displays the product details otherwise The Thymeleaf shows one Alert message if no data exists.
+>> If want to search for any product details, we need the product ID then only we search product details. For this we have created one POST API, that is searchProduct. When we hit this API, it will open one form and ask for product ID then Click on the Search Button. If the product ID does not exist, it will show one alert message to you.
+
 - Delete Product
+>> Its ID, for this we have created one POST method API. When you hit API, it will ask you for the product ID. If you provide a valid ID, then the product is removed from the database otherwise it will show one error message like an alert message.
+
 - Product Report
+>> One basic product report on a maximum and minimum number of product items with their category. For charts creation, we have used chart js cdn
 
 The Inventory Management System is used in Business tracking and counting, and it provides an in-detail report about the Available Inventory. Here we have created a basic Inventory Management *System using Spring Boot with Spring MVC Pattern*. Your Basic knowledge about annotations, the working process of *Spring MVC pattern*, and others for a Better Understanding of this Article.
