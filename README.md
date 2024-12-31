@@ -43,6 +43,18 @@ In this Inventory Management System Project, the Product ID is dynamically Gener
 
 >> Required Project Dependencies: These Project Dependencies are available in Spring Stater Project While creating the Project. After the Creation of this Project, You can see These Dependencies in the build.gradle file in the Project.
 
+```
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    compileOnly 'org.projectlombok:lombok'
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    annotationProcessor 'org.projectlombok:lombok'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+```
+
 ## Project Folder Structure
 
 ![image](https://github.com/user-attachments/assets/095d65cd-d020-4d78-8622-3fcbf6b0edb4)
