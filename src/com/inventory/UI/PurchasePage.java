@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package com.inventory.UI;
 
 import com.inventory.DAO.ProductDAO;
@@ -13,10 +9,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author asjad
- */
+
 public class PurchasePage extends javax.swing.JPanel {
 
     ProductDTO productDTO;
