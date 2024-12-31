@@ -41,6 +41,7 @@ In this Inventory Management System Project, the Product ID is dynamically Gener
 7. After successfully completion of Front-End and Back-End then Integrate both of them by using the Thymeleaf Framework.
 8. After that Run this Application as Spring Boot App.
 
+
 >> Required Project Dependencies: These Project Dependencies are available in Spring Stater Project While creating the Project. After the Creation of this Project, You can see These Dependencies in the build.gradle file in the Project.
 
 ```
