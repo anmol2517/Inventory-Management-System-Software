@@ -1,4 +1,4 @@
-# Inventory-Management-System-Software
+# Inventory-Management-System/Software
 
 Inventory Management System plays an important role in Business for tracking the Inventory, and It is used for tracking and movement of goods. In this article, we have provided some basic functionality for the Inventory Management System like an Analysis report of goods, adding new Products to the System, Searching the existing product details, and other one is deleting an existing product from the System. In this article, we have mentioned an Inventory Management System as an IMS App, for this tool we have used Spring Boot with an MVC pattern with Thymeleaf for front-end integration.
 
