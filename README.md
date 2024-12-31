@@ -34,7 +34,8 @@ In this Inventory Management System Project, the Product ID is dynamically Gener
 ## Project Creation Steps
 1. Create a Spring Stater Project using Spring Tool Suite IDE ( reference )
 2. After successfully creation of Project, then create a Package for different layers in this web Application namely packages for Controller, POJO, Repository, and other packages if you want.
-3. In the Controller Package create one ProductController class after that create one Project POJO class in the POJO package, After Creating one Product Repository interface in the Repository package. After that create one 4. 4. HTML file in the Templates which is placed in the project resource folder.
+3. In the Controller Package create one ProductController class after that create one Project POJO class in the POJO package, After Creating one Product Repository interface in the Repository package. After that create one.
+4. HTML file in the Templates which is placed in the project resource folder.
 5. Now Implement Controller layer code after that develop pojo class code, and after that develop repository class code.
 6. After completion of Back-end functionalities then develop the front-end page for visibility.
 7. After successfully completion of Front-End and Back-End then Integrate both of them by using the Thymeleaf Framework.
