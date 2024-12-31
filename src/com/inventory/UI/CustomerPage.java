@@ -11,10 +11,6 @@ import com.inventory.DTO.CustomerDTO;
 import javax.swing.*;
 import java.sql.SQLException;
 
-/**
- *
- * @author asjad
- */
 public class CustomerPage extends javax.swing.JPanel {
 
     /**
