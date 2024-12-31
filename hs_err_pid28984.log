@@ -6,22 +6,18 @@
 # JRE version: Java(TM) SE Runtime Environment (16.0+36) (build 16+36-2231)
 # Java VM: Java HotSpot(TM) 64-Bit Server VM (16+36-2231, mixed mode, sharing, tiered, compressed oops, g1 gc, windows-amd64)
 # Problematic frame:
-# C  [flatlaf-windows-x86_64-17239416212433000.dll+0x1661]
 #
 # No core dump will be written. Minidumps are not enabled by default on client versions of Windows
 #
 # If you would like to submit a bug report, please visit:
 #   https://bugreport.java.com/bugreport/crash.jsp
 # The crash happened outside the Java Virtual Machine in native code.
-# See problematic frame for where to report the bug.
+# See the problematic frame for where to report the bug.
 #
 
 ---------------  S U M M A R Y ------------
 
 Command Line: -Dfile.encoding=UTF-8 --module-path=D:\Documents\Eclipse Workspace\InventoryManagement\build\classes com.inventory.UI.LoginPage
-
-Host: Intel(R) Core(TM) i7-10750H CPU @ 2.60GHz, 12 cores, 15G,  Windows 10 , 64 bit Build 19041 (10.0.19041.1023)
-Time: Fri Jul 23 02:44:08 2021 India Standard Time elapsed time: 21.647240 seconds (0d 0h 0m 21s)
 
 ---------------  T H R E A D  ---------------
 
@@ -29,7 +25,6 @@ Current thread (0x0000012ce5379740):  JavaThread "AWT-Windows" daemon [_thread_i
 
 Stack: [0x000000067da00000,0x000000067db00000],  sp=0x000000067dafe680,  free space=1017k
 Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
-C  [flatlaf-windows-x86_64-17239416212433000.dll+0x1661]
 
 Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
 j  sun.awt.windows.WToolkit.eventLoop()V+0 java.desktop@16
