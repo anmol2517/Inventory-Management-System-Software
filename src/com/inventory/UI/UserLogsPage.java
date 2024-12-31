@@ -1,23 +1,14 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package com.inventory.UI;
 
 import com.inventory.DAO.UserDAO;
 
 import java.sql.SQLException;
 
-/**
- *
- * @author asjad
- */
+
 public class UserLogsPage extends javax.swing.JPanel {
 
-    /**
-     * Creates new form UserLogsPage
-     */
+    
     public UserLogsPage() {
         initComponents();
         loadDataSet();
