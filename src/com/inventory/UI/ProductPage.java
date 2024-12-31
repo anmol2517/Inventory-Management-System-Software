@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.inventory.UI;
 
 import com.inventory.DAO.ProductDAO;
@@ -13,10 +8,7 @@ import com.toedter.calendar.JDateChooser;
 import javax.swing.*;
 import java.sql.SQLException;
 
-/**
- *
- * @author Asjad Iqbal
- */
+
 public class ProductPage extends javax.swing.JPanel {
 
     /**
