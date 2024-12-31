@@ -89,6 +89,13 @@ For this, we have created one POJO class in pojo package which is Product.class,
 
 Code performs different operations like displaying the HTML index page, adding product details as well as displaying the analysis report of the Product.
 
+```
+  <properties>
+  <comment>Credentials for the database.</comment>
+    <entry key="username">root</entry>
+    <entry key="password">root</entry>
+  </properties>
+```
 - *@GetMapping("/productAnalysis")*
 - *@GetMapping("/")*
 - *@PostMapping("/newProduct")*
