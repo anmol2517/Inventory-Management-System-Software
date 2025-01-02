@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.inventory.UI;
 
 import com.inventory.DAO.UserDAO;
@@ -13,16 +8,12 @@ import java.sql.*;
 
 
 public class UsersPage extends javax.swing.JPanel {
-
-   
     public UsersPage() {
         initComponents();
         loadDataSet();
     }
-
     
     @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
@@ -217,7 +208,7 @@ public class UsersPage extends javax.swing.JPanel {
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addGap(95, 95, 95))
         );
-    }// </editor-fold>//GEN-END:initComponents
+    }
 
     private void clearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearButtonActionPerformed
         nameText.setText("");
@@ -225,8 +216,8 @@ public class UsersPage extends javax.swing.JPanel {
         phoneText.setText("");
         usernameText.setText("");
         passText.setText("");
-    }//GEN-LAST:event_clearButtonActionPerformed
-
+    }
+   
     String userType;
     private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButtonActionPerformed
         UserDTO userDTO = new UserDTO();
@@ -244,7 +235,7 @@ public class UsersPage extends javax.swing.JPanel {
             new UserDAO().addUserDAO(userDTO, userType);
             loadDataSet();
         }
-    }//GEN-LAST:event_addButtonActionPerformed
+    }
 
     private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButtonActionPerformed
         if (userTable.getSelectedRow()<0)
@@ -263,7 +254,7 @@ public class UsersPage extends javax.swing.JPanel {
                 loadDataSet();
             }
         }
-    }//GEN-LAST:event_deleteButtonActionPerformed
+    }
 
     String username;
     private void userTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_userTableMouseClicked
@@ -279,7 +270,7 @@ public class UsersPage extends javax.swing.JPanel {
         phoneText.setText(val[3].toString());
         usernameText.setText(val[4].toString());
         userTypeCombo.setSelectedItem(val[6].toString());
-    }//GEN-LAST:event_userTableMouseClicked
+    }
 
     public void loadDataSet() {
         try {
@@ -290,25 +281,26 @@ public class UsersPage extends javax.swing.JPanel {
         }
     }
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addButton;
     private javax.swing.JButton clearButton;
     private javax.swing.JButton deleteButton;
     private javax.swing.JPanel entryPanel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+   
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
+   
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextField locationText;
     private javax.swing.JTextField nameText;
     private javax.swing.JPasswordField passText;
+   
     private javax.swing.JTextField phoneText;
     private javax.swing.JTable userTable;
     private javax.swing.JComboBox<String> userTypeCombo;
     private javax.swing.JTextField usernameText;
-    // End of variables declaration//GEN-END:variables
 }
