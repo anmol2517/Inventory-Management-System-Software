@@ -1,7 +1,4 @@
-### Inventory Management System - 
----
-
-# **Inventory Management System (IMS)**  
+# **Inventory Management System/Software
 A web-based application designed for businesses to track and manage inventory efficiently. This project leverages **Spring Boot**, **Thymeleaf**, **MongoDB**, and the **Spring MVC pattern** to provide an intuitive interface and backend functionality.  
 
 ---
