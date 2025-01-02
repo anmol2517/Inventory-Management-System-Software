@@ -65,7 +65,7 @@ Ensure the following tools and dependencies are installed on your system:
 ## **Setup Instructions**  
 1. **Clone the repository**:  
    ```bash  
-   git clone https://github.com/your-username/inventory-management-system.git  
+   git clone https://github.com/anmol2517/Inventory-Management-System-Software.git  
    cd inventory-management-system  
    ```  
 
@@ -146,7 +146,3 @@ HTML templates (Thymeleaf) integrate backend logic and display dynamic content.
 
 ## **License**  
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.  
-
---- 
-
-Feel free to customize it further as per your project needs! Let me know if you need more details. 😊  
