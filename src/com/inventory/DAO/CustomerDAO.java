@@ -1,4 +1,3 @@
-
 package com.inventory.DAO;
 
 import com.inventory.DTO.CustomerDTO;
@@ -9,8 +8,6 @@ import javax.swing.table.DefaultTableModel;
 import java.sql.*;
 import java.util.Locale;
 import java.util.Vector;
-
-
 
 public class CustomerDAO {
     Connection conn = null;
@@ -27,7 +24,6 @@ public class CustomerDAO {
         }
     }
 
-    // Methods to add new custoemr
     public void addCustomerDAO(CustomerDTO customerDTO) {
         try {
             String query = "SELECT * FROM customers WHERE fullname='"
@@ -59,10 +55,8 @@ public class CustomerDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
     }
 
-    // Method to edit existing customer details
     public  void editCustomerDAO(CustomerDTO customerDTO) {
         try {
             String query = "UPDATE customers SET fullname=?,location=?,phone=? WHERE customercode=?";
@@ -78,7 +72,6 @@ public class CustomerDAO {
         }
     }
 
-    // Method to delete existing customer
     public void deleteCustomerDAO(String custCode) {
         try {
             String query = "DELETE FROM customers WHERE customercode='" +custCode+ "'";
@@ -89,7 +82,6 @@ public class CustomerDAO {
         }
     }
 
-    // Method to retrieve data set to be displayed
     public ResultSet getQueryResult() {
         try {
             String query = "SELECT customercode,fullname,location,phone FROM customers";
@@ -100,7 +92,6 @@ public class CustomerDAO {
         return resultSet;
     }
 
-    // Method to retrieve search data
     public ResultSet getCustomerSearch(String text) {
         try {
             String query = "SELECT customercode,fullname,location,phone FROM customers " +
@@ -135,7 +126,6 @@ public class CustomerDAO {
         return resultSet;
     }
 
-    // Method to display data set in tabular form
     public DefaultTableModel buildTableModel(ResultSet resultSet) throws SQLException {
         ResultSetMetaData metaData = resultSet.getMetaData();
         Vector<String> columnNames = new Vector<String>();
@@ -155,5 +145,4 @@ public class CustomerDAO {
         }
         return new DefaultTableModel(data, columnNames);
     }
-
 }
