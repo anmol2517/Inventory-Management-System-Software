@@ -1,4 +1,3 @@
-
 package com.inventory.DAO;
 
 import com.inventory.DTO.SupplierDTO;
@@ -10,8 +9,6 @@ import java.sql.*;
 import java.util.Locale;
 import java.util.Vector;
 
-
-// Data Access Object for Suppliers
 public class SupplierDAO {
 
     Connection conn = null;
@@ -28,7 +25,6 @@ public class SupplierDAO {
         }
     }
 
-    // Methods to add new supplier
     public void addSupplierDAO(SupplierDTO supplierDTO) {
         try {
             String query = "SELECT * FROM suppliers WHERE fullname='"
@@ -62,7 +58,6 @@ public class SupplierDAO {
         }
     }
 
-    // Method to edit existing suppleir details
     public void editSupplierDAO(SupplierDTO supplierDTO) {
         try {
             String query = "UPDATE suppliers SET fullname=?,location=?,mobile=? WHERE suppliercode=?";
@@ -78,7 +73,6 @@ public class SupplierDAO {
         }
     }
 
-    // Method to delete existing supplier
     public void deleteSupplierDAO(String suppCode) {
         try {
             String query = "DELETE FROM suppliers WHERE suppliercode='" +suppCode+ "'";
@@ -89,7 +83,6 @@ public class SupplierDAO {
         }
     }
 
-    // Supplier data set retrieval method
     public ResultSet getQueryResult() {
         try {
             String query = "SELECT suppliercode, fullname, location, mobile FROM suppliers";
@@ -100,7 +93,6 @@ public class SupplierDAO {
         return resultSet;
     }
 
-    // Search method
     public ResultSet getSearchResult(String searchText) {
         try {
             String query = "SELECT suppliercode, fullname, location, mobile FROM suppliers " +
@@ -113,7 +105,6 @@ public class SupplierDAO {
         return resultSet;
     }
 
-    // Method to set/update supplier combo box
     public DefaultComboBoxModel<String> setComboItems(ResultSet resultSet) throws SQLException {
         Vector<String> suppNames = new Vector<>();
         while (resultSet.next()){
@@ -122,7 +113,6 @@ public class SupplierDAO {
         return new DefaultComboBoxModel<>(suppNames);
     }
 
-    // Method to display retrieved data set in tabular form
     public DefaultTableModel buildTableModel(ResultSet resultSet) throws SQLException {
         ResultSetMetaData metaData = resultSet.getMetaData();
         Vector<String> columnNames = new Vector<String>();
