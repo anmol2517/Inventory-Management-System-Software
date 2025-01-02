@@ -1,4 +1,3 @@
-
 package com.inventory.DAO;
 
 import com.inventory.DTO.UserDTO;
@@ -11,15 +10,12 @@ import java.sql.*;
 import java.util.Locale;
 import java.util.Vector;
 
-
-
 public class UserDAO {
     Connection conn = null;
     PreparedStatement prepStatement = null;
     Statement statement = null;
     ResultSet resultSet = null;
 
-    // Constructor method
     public UserDAO() {
         try {
             conn = new ConnectionFactory().getConn();
@@ -29,8 +25,6 @@ public class UserDAO {
         }
     }
 
-
-    // Methods to add new user
     public void addUserDAO(UserDTO userDTO, String userType) {
         try {
             String query = "SELECT * FROM users WHERE name='"
@@ -63,6 +57,8 @@ public class UserDAO {
                 username = "root";
                 password = "root";
             }
+
+            
 //            else {
 //                String resQuery2 = "SELECT * FROM users ORDER BY id DESC";
 //                resultSet = statement.executeQuery(resQuery2);
@@ -75,6 +71,7 @@ public class UserDAO {
 //                    password = "user" + uCode;
 //                }
 //            }
+            
 
             String query = "INSERT INTO users (name,location,phone,username,password,usertype) " +
                     "VALUES(?,?,?,?,?,?)";
@@ -96,7 +93,6 @@ public class UserDAO {
         }
     }
 
-    // Method to edit existing user
     public void editUserDAO(UserDTO userDTO) {
 
         try {
@@ -115,7 +111,6 @@ public class UserDAO {
         }
     }
 
-    // Method to delete existing user
     public void deleteUserDAO(String username) {
         try {
             String query = "DELETE FROM users WHERE username=?";
@@ -129,7 +124,6 @@ public class UserDAO {
         new UsersPage().loadDataSet();
     }
 
-    // Method to retrieve data set to display in table
     public ResultSet getQueryResult() {
         try {
             String query = "SELECT * FROM users";
@@ -212,7 +206,6 @@ public class UserDAO {
         }
     }
 
-    // Method to display data set in tabular form
     public DefaultTableModel buildTableModel(ResultSet resultSet) throws SQLException {
         ResultSetMetaData metaData = resultSet.getMetaData();
         Vector<String> columnNames = new Vector<String>();
@@ -232,5 +225,4 @@ public class UserDAO {
         }
         return new DefaultTableModel(data, columnNames);
     }
-
 }
