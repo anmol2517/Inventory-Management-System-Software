@@ -1,4 +1,3 @@
-
 package com.inventory.UI;
 
 import com.inventory.DAO.CustomerDAO;
@@ -16,10 +15,6 @@ public class SalesPage extends javax.swing.JPanel {
     Dashboard dashboard;
     int quantity;
     String prodCode;
-
-    /**
-     * Creates new form SalesPage
-     */
     
     public SalesPage(String username, Dashboard dashboard) {
         initComponents();
@@ -32,7 +27,6 @@ public class SalesPage extends javax.swing.JPanel {
 
    
     @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
@@ -264,9 +258,9 @@ public class SalesPage extends javax.swing.JPanel {
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addContainerGap(70, Short.MAX_VALUE))
         );
-    }// </editor-fold>//GEN-END:initComponents
+    }
 
-    private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButtonActionPerformed
+    private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {
         if (salesTable.getSelectedRow()<0)
             JOptionPane.showMessageDialog(this, "Please select an entry from the table you wish to delete.");
         else {
@@ -283,9 +277,9 @@ public class SalesPage extends javax.swing.JPanel {
                 loadDataSet();
             }
         }
-    }//GEN-LAST:event_deleteButtonActionPerformed
+    }
 
-    private void clearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearButtonActionPerformed
+    private void clearButtonActionPerformed(java.awt.event.ActionEvent evt) {
         custCodeText.setText("");
         custNameLabel.setText("");
         custNameLabel.setVisible(false);
@@ -296,13 +290,12 @@ public class SalesPage extends javax.swing.JPanel {
         priceText.setText("");
         quantityText.setText("");
         loadDataSet();
-    }//GEN-LAST:event_clearButtonActionPerformed
+    }
 
-    private void addCustButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addCustButtonActionPerformed
+    private void addCustButtonActionPerformed(java.awt.event.ActionEvent evt) {
         dashboard.addCustPage();
-    }//GEN-LAST:event_addCustButtonActionPerformed
-
-    private void sellButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sellButtonActionPerformed
+    }
+    private void sellButtonActionPerformed(java.awt.event.ActionEvent evt) {
         if (custCodeText.getText().equals("") || prodCodeText.getText().equals("")
                 || jDateChooser1.getDate()==null || quantityText.getText().equals("") || priceText.getText().equals(""))
             JOptionPane.showMessageDialog(this, "Please fill all the required fields.");
@@ -327,9 +320,9 @@ public class SalesPage extends javax.swing.JPanel {
                 e.printStackTrace();
             }
         }
-    }//GEN-LAST:event_sellButtonActionPerformed
+    }
 
-    private void salesTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_salesTableMouseClicked
+    private void salesTableMouseClicked(java.awt.event.MouseEvent evt) {
         int row = salesTable.getSelectedRow();
         int col = salesTable.getColumnCount();
         Object[] data = new Object[col];
@@ -337,9 +330,9 @@ public class SalesPage extends javax.swing.JPanel {
             data[i] = salesTable.getValueAt(row, i);
         quantity = Integer.parseInt(data[3].toString());
         prodCode = data[1].toString();
-    }//GEN-LAST:event_salesTableMouseClicked
+    }
 
-    private void custCodeTextKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_custCodeTextKeyReleased
+    private void custCodeTextKeyReleased(java.awt.event.KeyEvent evt) {
         try {
             ResultSet resultSet = new CustomerDAO().getCustName(custCodeText.getText());
             if (resultSet.next())
@@ -353,9 +346,9 @@ public class SalesPage extends javax.swing.JPanel {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-    }//GEN-LAST:event_custCodeTextKeyReleased
+    }
 
-    private void prodCodeTextKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_prodCodeTextKeyReleased
+    private void prodCodeTextKeyReleased(java.awt.event.KeyEvent evt) {
         try {
             ResultSet resultSet = new CustomerDAO().getProdName(prodCodeText.getText());
             if (resultSet.next()) {
@@ -397,7 +390,6 @@ public class SalesPage extends javax.swing.JPanel {
         }
     }
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addCustButton;
     private javax.swing.JButton clearButton;
     private javax.swing.JTextField custCodeText;
@@ -421,5 +413,4 @@ public class SalesPage extends javax.swing.JPanel {
     private javax.swing.JTextField searchText;
     private javax.swing.JButton sellButton;
     private javax.swing.JPanel sellPanel;
-    // End of variables declaration//GEN-END:variables
 }
