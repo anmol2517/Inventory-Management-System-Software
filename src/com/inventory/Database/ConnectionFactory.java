@@ -1,17 +1,16 @@
-
 package com.inventory.Database;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.Properties;
 
-//Class to retrieve connection for database and login verfication.
 public class ConnectionFactory {
 
     static final String driver = "com.mysql.cj.jdbc.Driver";
@@ -27,7 +26,6 @@ public class ConnectionFactory {
 
     public ConnectionFactory(){
         try {
-            //Username and Password saved as configurable properties to allow changes without recompilation.
             prop = new Properties();
             prop.loadFromXML(new FileInputStream("lib/DBCredentials.xml"));
         } catch (IOException e) {
@@ -56,7 +54,6 @@ public class ConnectionFactory {
         return conn;
     }
 
-    //Login verification method
     public boolean checkLogin(String username, String password, String userType){
         String query = "SELECT * FROM users WHERE username='"
                 + username
