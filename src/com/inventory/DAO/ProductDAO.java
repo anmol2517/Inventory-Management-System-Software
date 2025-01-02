@@ -1,4 +1,3 @@
-
 package com.inventory.DAO;
 
 import com.inventory.DTO.ProductDTO;
@@ -137,7 +136,6 @@ public class ProductDAO {
         return custCode;
     }
 
-    // Method to check for availability of stock in Inventory
     boolean flag = false;
     public boolean checkStock(String prodCode) {
         try {
@@ -152,7 +150,6 @@ public class ProductDAO {
         return flag;
     }
 
-    // Methods to add a new product
     public void addProductDAO(ProductDTO productDTO) {
         try {
             String query = "SELECT * FROM products WHERE productname='"
@@ -196,7 +193,6 @@ public class ProductDAO {
         }
     }
 
-    // Method to add a new purchase transaction
     public void addPurchaseDAO(ProductDTO productDTO) {
         try {
             String query = "INSERT INTO purchaseinfo VALUES(null,?,?,?,?,?)";
@@ -241,7 +237,6 @@ public class ProductDAO {
         deleteStock();
     }
 
-    // Method to update existing product details
     public void editProdDAO(ProductDTO productDTO) {
         try {
             String query = "UPDATE products SET productname=?,costprice=?,sellprice=?,brand=? WHERE productcode=?";
@@ -265,7 +260,6 @@ public class ProductDAO {
         }
     }
 
-    // Methods to handle updating of stocks in Inventory upon any transaction made
     public void editPurchaseStock(String code, int quantity) {
         try {
             String query = "SELECT * FROM currentstock WHERE productcode='" +code+ "'";
@@ -307,7 +301,6 @@ public class ProductDAO {
         }
     }
 
-    // Method to permanently delete a product from inventory
     public void deleteProductDAO(String code) {
         try {
             String query = "DELETE FROM products WHERE productcode=?";
@@ -356,7 +349,6 @@ public class ProductDAO {
         deleteStock();
     }
 
-    // Sales transaction handling
     public void sellProductDAO(ProductDTO productDTO, String username) {
         int quantity = 0;
         String prodCode = null;
@@ -389,7 +381,6 @@ public class ProductDAO {
         }
     }
 
-    // Products data set retrieval for display
     public ResultSet getQueryResult() {
         try {
             String query = "SELECT productcode,productname,costprice,sellprice,brand FROM products ORDER BY pid";
@@ -400,7 +391,6 @@ public class ProductDAO {
         return resultSet;
     }
 
-    // Purchase table data set retrieval
     public ResultSet getPurchaseInfo() {
         try {
             String query = "SELECT PurchaseID,purchaseinfo.ProductCode,ProductName,Quantity,Totalcost " +
@@ -413,7 +403,6 @@ public class ProductDAO {
         return resultSet;
     }
 
-    // Stock table data set retrieval
     public ResultSet getCurrentStockInfo() {
         try {
             String query = """
@@ -429,7 +418,6 @@ public class ProductDAO {
         return resultSet;
     }
 
-    // Sales table data set retrieval
     public ResultSet getSalesInfo() {
         try {
             String query = """
@@ -447,7 +435,6 @@ public class ProductDAO {
         return resultSet;
     }
 
-    // Search method for products
     public ResultSet getProductSearch(String text) {
         try {
             String query = "SELECT productcode,productname,costprice,sellprice,brand FROM products " +
@@ -470,7 +457,6 @@ public class ProductDAO {
         return resultSet;
     }
 
-    // Search method for sales
     public ResultSet getSalesSearch(String text) {
         try {
             String query = "SELECT salesid,salesinfo.productcode,productname,\n" +
@@ -490,7 +476,6 @@ public class ProductDAO {
         return resultSet;
     }
 
-    // Search method for purchase logs
     public ResultSet getPurchaseSearch(String text) {
         try {
             String query = "SELECT PurchaseID,purchaseinfo.productcode,products.productname,quantity,totalcost " +
@@ -571,8 +556,6 @@ public class ProductDAO {
         return date;
     }
 
-
-    // Method to display product-related data set in tabular form
     public DefaultTableModel buildTableModel(ResultSet resultSet) throws SQLException {
         ResultSetMetaData metaData = resultSet.getMetaData();
         Vector<String> columnNames = new Vector<String>();
@@ -592,10 +575,4 @@ public class ProductDAO {
         }
         return new DefaultTableModel(data, columnNames);
     }
-
-
-
-
-
-
 }
