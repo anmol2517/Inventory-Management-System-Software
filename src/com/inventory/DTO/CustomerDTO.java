@@ -1,8 +1,4 @@
-
 package com.inventory.DTO;
-
-
-// Data Transfer Object (DTO) class for Customers
 
 public class CustomerDTO {
 
