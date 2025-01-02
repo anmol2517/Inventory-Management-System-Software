@@ -2,22 +2,16 @@ package com.inventory.UI;
 
 import com.inventory.DAO.SupplierDAO;
 import com.inventory.DTO.SupplierDTO;
-
 import javax.swing.*;
 import java.sql.SQLException;
 
-
 public class SupplierPage extends javax.swing.JPanel {
-
-
     public SupplierPage() {
         initComponents();
         loadDataSet();
     }
-
     
     @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
@@ -234,7 +228,7 @@ public class SupplierPage extends javax.swing.JPanel {
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addContainerGap(31, Short.MAX_VALUE))
         );
-    }// </editor-fold>//GEN-END:initComponents
+    }
 
     private void suppTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_suppTableMouseClicked
         int row = suppTable.getSelectedRow();
@@ -247,7 +241,7 @@ public class SupplierPage extends javax.swing.JPanel {
         nameText.setText((String) data[1]);
         locationText.setText((String) data[2]);
         phoneText.setText((String) data[3]);
-    }//GEN-LAST:event_suppTableMouseClicked
+    }
 
     private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButtonActionPerformed
         if (codeText.getText().equals("") || nameText.getText().equals("")
@@ -262,7 +256,7 @@ public class SupplierPage extends javax.swing.JPanel {
             new SupplierDAO().addSupplierDAO(supplierDTO);
             loadDataSet();
         }
-    }//GEN-LAST:event_addButtonActionPerformed
+    }
 
     private void editButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editButtonActionPerformed
         if (suppTable.getSelectedRow()<0)
@@ -281,9 +275,9 @@ public class SupplierPage extends javax.swing.JPanel {
                 loadDataSet();
             }
         }
-    }//GEN-LAST:event_editButtonActionPerformed
+    }
 
-    private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButtonActionPerformed
+    private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {
         if (suppTable.getSelectedRow()<0)
             JOptionPane.showMessageDialog(this, "Please select an entry from the table to be deleted.");
         else {
@@ -297,23 +291,20 @@ public class SupplierPage extends javax.swing.JPanel {
                 loadDataSet();
             }
         }
-    }//GEN-LAST:event_deleteButtonActionPerformed
+    }
 
-    private void clearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearButtonActionPerformed
+    private void clearButtonActionPerformed(java.awt.event.ActionEvent evt) {
         codeText.setText("");
         nameText.setText("");
         locationText.setText("");
         phoneText.setText("");
         searchText.setText("");
-    }//GEN-LAST:event_clearButtonActionPerformed
-
-    private void searchTextKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_searchTextKeyReleased
+    }
+    private void searchTextKeyReleased(java.awt.event.KeyEvent evt) {
         String text = searchText.getText();
         loadSearchData(text);
-    }//GEN-LAST:event_searchTextKeyReleased
+    }
 
-
-    // Method to load data into table
     public void loadDataSet() {
         try {
             SupplierDAO supplierDAO = new SupplierDAO();
@@ -323,7 +314,6 @@ public class SupplierPage extends javax.swing.JPanel {
         }
     }
 
-    // Method to display search result in table
     public void loadSearchData(String text) {
         try {
             SupplierDAO supplierDAO = new SupplierDAO();
@@ -333,7 +323,6 @@ public class SupplierPage extends javax.swing.JPanel {
         }
     }
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addButton;
     private javax.swing.JButton clearButton;
     private javax.swing.JTextField codeText;
@@ -341,6 +330,7 @@ public class SupplierPage extends javax.swing.JPanel {
     private javax.swing.JTextField debitText;
     private javax.swing.JButton deleteButton;
     private javax.swing.JButton editButton;
+    
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -350,6 +340,7 @@ public class SupplierPage extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
+    
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextField locationText;
@@ -357,5 +348,4 @@ public class SupplierPage extends javax.swing.JPanel {
     private javax.swing.JTextField phoneText;
     private javax.swing.JTextField searchText;
     private javax.swing.JTable suppTable;
-    // End of variables declaration//GEN-END:variables
 }
