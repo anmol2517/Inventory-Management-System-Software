@@ -1,8 +1,6 @@
 
 package com.inventory.DTO;
 
-// Data Transfer Object (DTO) class for Products
-
 public class ProductDTO {
 
     private int prodID, quantity, userID;
