@@ -141,4 +141,3 @@ HTML templates (Thymeleaf) integrate backend logic and display dynamic content.
 | `/searchProduct`         | POST        | Search for a product by ID.       |  
 | `/deleteProduct`         | POST        | Delete a product by ID.           |  
 | `/productAnalysis`       | GET         | Show product analysis charts.     |  
-
